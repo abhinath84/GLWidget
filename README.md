@@ -5,6 +5,10 @@ glut window and doing gl related stuff.
 
 --------------------------------------------
 Example:
+--------------------------------------------
+////////////////////////////
+// game.h
+////////////////////////////
 
 class Game: public GLWidget {
 public:
@@ -17,8 +21,9 @@ private:
   void drawLineStripLoop_3D();
 };
 
--------------------------------------------
-
+////////////////////////////
+// main.cpp
+////////////////////////////
 #include <iostream>
 #include "game.h"
 
@@ -31,5 +36,3 @@ int main(int argc, char **argv)
 
   return(0);
 }
-
--------------------------------------------
