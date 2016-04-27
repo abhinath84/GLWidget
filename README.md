@@ -33,6 +33,6 @@ int main(int argc, char **argv)
 {
   GLWidget *gameWidget = new Game();
   gameWidget->mainloopGL(argc, argv);
-
+  
   return(0);
 }
