@@ -3,6 +3,8 @@ GLWidget - Object Oriented glut framework
 GLWidget class is a abstract class which help user to create
 glut window and doing gl related stuff.
 
+Link: https://www.youtube.com/watch?v=MnlknEMjjGw
+
 --------------------------------------------
 Example:
 --------------------------------------------
