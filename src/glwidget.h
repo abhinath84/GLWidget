@@ -18,8 +18,11 @@
   #include <GL/glut.h>
 #endif
 
+#include "point.h"
+
 using namespace std;
 
+typedef Point<int> Point2d;
 
 typedef struct glWindow
 {
@@ -56,13 +59,21 @@ public:
   GLWidget(int win_x, int win_y, int win_w, int win_h, const string &win_title);
   virtual ~GLWidget() = 0;
 
-  void setDisplayModeGL(unsigned int displayMode);
-  void mainloopGL(int argc, char **argv);
+  void    setWidth(int w);
+  int     getWIdth() const;
+  void    setHeight(int h);
+  int     getHeight()const;
+  void    setTitle(const string &title);
+  string  getTitle()const;
+  void    setPosition(int x, int y);
+  Point2d getPostion()const;
+  void    setDisplayModeGL(unsigned int displayMode);
+  void    mainloopGL(int argc, char **argv);
 
 protected:
   virtual void initializeGL();
-  virtual void createMenuGL();
   virtual void beforeMainLoopGL();
+  virtual void setupMenu();
 
 protected:
   virtual void displayGL();
@@ -85,6 +96,7 @@ protected:
   virtual void menuStatusGL(int status, int x, int y);
   virtual void idleGL();
   virtual void timerGL(int value);
+  virtual void createMenuGL(int menu);
 
 private:
   static void display();
@@ -107,6 +119,7 @@ private:
   static void menuStatus(int status, int x, int y);
   static void idle();
   static void timer(int value);
+  static void createManu(int menu);
 
 private:
   void setInstance();

@@ -61,8 +61,8 @@ public:
 
 protected:
   virtual void initializeGL();
-  virtual void createMenuGL();
   virtual void beforeMainLoopGL();
+  virtual void setupMenu();
 
 protected:
   virtual void displayGL();
@@ -85,6 +85,7 @@ protected:
   virtual void menuStatusGL(int status, int x, int y);
   virtual void idleGL();
   virtual void timerGL(int value);
+  virtual void createMenuGL(int menu);
 
 private:
   static void display();
@@ -107,6 +108,7 @@ private:
   static void menuStatus(int status, int x, int y);
   static void idle();
   static void timer(int value);
+  static void createManu(int menu);
 
 private:
   void setInstance();

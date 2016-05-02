@@ -23,9 +23,11 @@ void Game::displayGL()
   //  Clear the window or more specifically the frame buffer...
   //  This happens by replacing all the contents of the frame
   //  buffer by the clear color
-  glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+  //glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+  //glClear(GL_COLOR_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+  glClear(GL_COLOR_BUFFER_BIT);
 
-  //drawSpiral_3D();
+  //drawSpiral_3D();;
   //drawLines_3D();
   drawLineStripLoop_3D();
 

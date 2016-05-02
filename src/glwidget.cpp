@@ -25,6 +25,46 @@ GLWidget::~GLWidget()
 {
 }
 
+void GLWidget::setWidth(int w)
+{
+  window.width = w;
+}
+
+int GLWidget::getWIdth() const
+{
+  return(window.width);
+}
+
+void GLWidget::setHeight(int h)
+{
+  window.height = h;
+}
+
+int GLWidget::getHeight()const
+{
+  return(window.height);
+}
+
+void GLWidget::setTitle(const string &title)
+{
+  window.title.assign(title);
+}
+
+string GLWidget::getTitle()const
+{
+  return(window.title);
+}
+
+void GLWidget::setPosition(int x, int y)
+{
+  window.x = x;
+  window.y = y;
+}
+Point2d GLWidget::getPostion()const
+{
+  return(Point2d(window.x, window.y));
+}
+
 void GLWidget::setDisplayModeGL(unsigned int displayMode)
 {
   glutDisplayMode = displayMode;
@@ -67,7 +107,8 @@ void GLWidget::mainloopGL(int argc, char **argv)
   //glutTimerFunc(30, timer, 50);
 
   // create menu manager
-  createMenuGL();
+  glutCreateMenu(createManu);
+  setupMenu();
 
   // customize glut related stuff like:
   // set glutTimerFunc etc, before call to
@@ -87,7 +128,7 @@ void GLWidget::initializeGL()
   glColor3f(0.0f, 1.0f, 0.0f);
 }
 
-void GLWidget::createMenuGL()
+void GLWidget::setupMenu()
 {
 }
 
@@ -307,4 +348,13 @@ void GLWidget::timerGL(int value)
 void GLWidget::timer(int value)
 {
   instance->timerGL(value);
+}
+
+void GLWidget::createMenuGL(int menu)
+{
+}
+
+void GLWidget::createManu(int menu)
+{
+  instance->createMenuGL(menu);
 }
