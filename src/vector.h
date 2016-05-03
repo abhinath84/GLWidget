@@ -8,7 +8,17 @@
 #ifndef VECTOR_H_
 #define VECTOR_H_
 
-class Vector {
+#if (defined(_WIN64) || defined(_WIN32))
+  #ifdef GLWIDGET_EXPORTS
+      #define GLWIDGET_DECLSPEC __declspec(dllexport)
+  #else
+      #define GLWIDGET_DECLSPEC __declspec(dllimport)
+  #endif
+#elif __linux
+  #define GLWIDGET_DECLSPEC 
+#endif
+
+class GLWIDGET_DECLSPEC Vector {
 public:
   Vector();
   ~Vector();

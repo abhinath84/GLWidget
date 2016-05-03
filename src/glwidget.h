@@ -11,6 +11,17 @@
 #include <iostream>
 #include <ctime>
 
+
+#if (defined(_WIN64) || defined(_WIN32))
+  #ifdef GLWIDGET_EXPORTS
+      #define GLWIDGET_DECLSPEC __declspec(dllexport)
+  #else
+      #define GLWIDGET_DECLSPEC __declspec(dllimport)
+  #endif
+#elif __linux
+  #define GLWIDGET_DECLSPEC 
+#endif
+
 // opengl related includes
 #if (defined(_WIN64) || defined(_WIN32))
   #include <freeglut.h>
@@ -24,7 +35,7 @@ using namespace std;
 
 typedef Point<int> Point2d;
 
-typedef struct glWindow
+typedef struct GLWIDGET_DECLSPEC glWindow
 {
   int     x;
   int     y;
@@ -52,7 +63,7 @@ typedef struct glWindow
 
 }GLWindow;
 
-class GLWidget
+class GLWIDGET_DECLSPEC GLWidget
 {
 public:
   GLWidget();

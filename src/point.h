@@ -11,6 +11,16 @@
 #include <iostream>
 #include <math.h>
 
+#if (defined(_WIN64) || defined(_WIN32))
+  #ifdef GLWIDGET_EXPORTS
+      #define GLWIDGET_DECLSPEC __declspec(dllexport)
+  #else
+      #define GLWIDGET_DECLSPEC __declspec(dllimport)
+  #endif
+#elif __linux
+  #define GLWIDGET_DECLSPEC 
+#endif
+
 #if defined(_WIN64) || defined(_WIN32)
   #include <freeglut.h>
 #elif __linux
@@ -20,7 +30,7 @@
 using namespace std;
 
 template<class T>
-class Point
+class GLWIDGET_DECLSPEC Point
 {
 public:
   // Default constructor (0,0,0,1)
