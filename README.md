@@ -8,11 +8,10 @@ Link: https://www.youtube.com/watch?v=MnlknEMjjGw
 --------------------------------------------
 Example:
 --------------------------------------------
-////////////////////////////
-// game.h
-////////////////////////////
-
-class Game: public GLWidget {
+game.h
+```cpp
+class Game: public GLWidget 
+{
 public:
   Game();
   ~Game();
@@ -22,10 +21,10 @@ public:
 private:
   void drawLineStripLoop_3D();
 };
+```
 
-////////////////////////////
-// main.cpp
-////////////////////////////
+main.cpp
+```cpp
 #include <iostream>
 #include "game.h"
 
@@ -38,3 +37,4 @@ int main(int argc, char **argv)
   
   return(0);
 }
+```
